@@ -13,7 +13,7 @@ You'll need to compile and install a dtbo.
 There are a couple of scripts that can do this for you:
 
 ```
-./build.sh
+./build_dtbo.sh
 ./install.sh
 ```
 
