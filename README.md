@@ -45,8 +45,8 @@ gcc -o canpong canpong.c
 As long as `vcan0` is available, this should give you some blinkage.
 
 ```
-canping -n vcan0 &
-sudo canpong -n vcan0 &
+./canping -n vcan0 &
+sudo ./canpong -n vcan0 &
 ```
 
 Kill everything with `pkill canping` and `sudo pkill canpong` when you're done.
@@ -55,10 +55,10 @@ Kill everything with `pkill canping` and `sudo pkill canpong` when you're done.
 
 I used [stlink](https://github.com/texane/stlink) to build and burn to the STM32F4 board from the BBB.  Follow the README in that repo to set up the toolchain.
 
-Set the STLINK path in `stm32_canpong/Makefile` and try a build:
+Set the STLINK path in `stm32f4_canpong/Makefile` and try a build:
 
 ```
-cd stm32_canpong
+cd stm32f4_canpong
 make
 ```
 
