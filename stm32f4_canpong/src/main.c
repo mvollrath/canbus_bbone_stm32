@@ -6,9 +6,9 @@
 #include "stm32f4xx_tim.h"
 
 // counter for outgoing messages
-uint8_t led_counter = 0;
+static uint8_t led_counter = 0;
 
-void tx(uint8_t data) {
+static void tx(uint8_t data) {
     CanTxMsg message;
     uint8_t mailbox;
     uint8_t status;
@@ -27,7 +27,7 @@ void tx(uint8_t data) {
     }
 }
 
-void rx() {
+static void rx() {
     CanRxMsg message;
     uint8_t counter;
 
