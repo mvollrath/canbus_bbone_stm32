@@ -78,10 +78,10 @@ uint8_t setup() {
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
     CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
-    
+
     // Timer
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-    TIM_TimeBaseInitTypeDef TimeBaseInitStructure; 
+    TIM_TimeBaseInitTypeDef TimeBaseInitStructure;
     TIM_TimeBaseStructInit(&TimeBaseInitStructure);
     TimeBaseInitStructure.TIM_Prescaler = 16;
     TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -117,7 +117,7 @@ uint8_t setup() {
     EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
     EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
     EXTI_Init(&EXTI_InitStructure);
- 
+
     NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
